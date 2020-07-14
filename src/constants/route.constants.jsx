@@ -1,7 +1,7 @@
 const ROUTES_CONSTANTS = {
   home: '/',
-  research: '/research/:text',
-  researchBase: '/research/'
+  research: '/search/:text',
+  researchBase: '/search/'
 };
 
 export default ROUTES_CONSTANTS;

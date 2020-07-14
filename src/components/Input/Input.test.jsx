@@ -8,7 +8,13 @@ describe('Input component test', () => {
   let wrapper;
 
   const MOCK_PROPS = {
-    onChange: jest.fn()
+    onChange: jest.fn(),
+    allowClear: true
+  };
+
+  const MOCK_PROPS_NOT_CLEAR = {
+    onChange: jest.fn(),
+    allowClear: false
   };
 
   beforeEach(() => {
@@ -82,5 +88,11 @@ describe('Input component test', () => {
         .first()
         .props().value
     ).toEqual('');
+  });
+
+  it('should not allow clear when allowClear false', () => {
+    const wrapperWithoutClear = mount(<Input {...MOCK_PROPS_NOT_CLEAR} />);
+
+    expect(wrapperWithoutClear.find('#clearButton').exists()).toBeFalsy();
   });
 });

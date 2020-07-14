@@ -1,20 +1,20 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './Home';
+import SearchResults from './SearchResults';
 
-describe('Home component test', () => {
+describe('SearchResults component test', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
       <BrowserRouter>
-        <Home />
+        <SearchResults />
       </BrowserRouter>
     );
   });
 
-  it('should render', () => {
+  it('it should render', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 });

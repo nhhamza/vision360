@@ -26,11 +26,13 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         fontFamily: 'Avenir Next LT Pro',
-        fontWeight: 500,
+        fontWeight: 'normal',
+        fontStyle: 'normal',
         fontSize: '16px',
         height: '48px',
         color: '#4E5360',
-        borderRadius: '18px',
+        lineHeight: '20px',
+        borderRadius: '8px',
         '&:hover': {
           backgroundColor,
           color: '#C82832',

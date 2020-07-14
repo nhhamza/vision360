@@ -1,0 +1,23 @@
+.card__title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.card__subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #8f97ad;
+}
+
+.search__text {
+  @media (max-width: 599.95px) {
+    display: none;
+  }
+}

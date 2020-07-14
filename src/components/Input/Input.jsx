@@ -18,7 +18,7 @@ const Adorment = ({ onClear }) => {
   );
 };
 
-const Input = ({ onChange }) => {
+const Input = ({ onChange, placeholder, allowClear, className }) => {
   const [text, setText] = useState('');
 
   const handleChange = e => {
@@ -31,13 +31,16 @@ const Input = ({ onChange }) => {
   };
 
   return (
-    <FormControl>
+    <FormControl className={className}>
       <OutlinedInput
         type="text"
         value={text}
         onChange={handleChange}
+        placeholder={placeholder}
         endAdornment={
-          <Adorment onClear={() => handleChange({ target: { value: '' } })} />
+          allowClear && (
+            <Adorment onClear={() => handleChange({ target: { value: '' } })} />
+          )
         }
       />
     </FormControl>
@@ -45,7 +48,10 @@ const Input = ({ onChange }) => {
 };
 
 Input.propTypes = {
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  placeholder: PropTypes.func,
+  allowClear: PropTypes.bool,
+  className: PropTypes.func
 };
 
 Adorment.propTypes = {
