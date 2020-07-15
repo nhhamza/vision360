@@ -12,6 +12,9 @@ export default new LocalizedStrings({
     logo: {
       vision: 'Vision',
       v360: '360º'
+    },
+    searchResults: {
+      results: 'RESULTATS POUR : '
     }
   }
 });

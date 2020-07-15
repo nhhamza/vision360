@@ -68,6 +68,11 @@ const theme = createMuiTheme({
           color: '#F5F6FA'
         }
       }
+    },
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: '#FFFFFF'
+      }
     }
   }
 });
