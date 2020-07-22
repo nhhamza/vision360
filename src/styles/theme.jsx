@@ -22,7 +22,22 @@ const theme = createMuiTheme({
         fontSize: 18
       }
     },
-
+    MuiStepLabel: {
+      label: {
+        color: '#8F97AD',
+        fontSize: '12px',
+        lineHeight: '16px',
+        '&$active': {
+          color: '#35B990',
+          fontWeight: '500',
+          fontSize: '18px',
+          lineHeight: '14px'
+        },
+        '&$completed': {
+          color: '#4E5360'
+        }
+      }
+    },
     MuiButton: {
       root: {
         fontFamily: 'Avenir Next LT Pro',

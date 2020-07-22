@@ -1,0 +1,42 @@
+.header-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartouche {
+  padding: 8px 14px;
+  position: relative;
+  border-radius: 8px 0px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  align-self: center;
+  display: flex;
+}
+
+.badge {
+  padding: 5px 10px;
+  font-family: 'Neo Sans Pro';
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  flex: none;
+  order: 0;
+  align-self: center;
+  display: flex;
+}
+
+.right-corner {
+  margin-left: auto;
+  display: inline-flex;
+  margin-right: 12px;
+}
+
+.logo {
+  margin-right: 10px;
+}
