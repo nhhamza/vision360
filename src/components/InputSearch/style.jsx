@@ -3,7 +3,8 @@ const styles = theme => ({
     width: '100%'
   },
   button: {
-    width: '100%'
+    width: '100%',
+    minWidth: '40px'
   },
   searchIcon: {
     [theme.breakpoints.up('sm')]: {

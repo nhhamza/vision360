@@ -4,22 +4,26 @@ import {
   stepBuilder
 } from '../shared/models/constantsBuilder';
 import ACHAT_NEUF_LOGO from '../assets/images/ACHAT-NEUF-1.png';
+import FINANCE_LOGO from '../assets/images/SOLUTIONS-CREDIT.png';
 
 export const CARD_TYPE = {
   identity: {
-    ...cardTypeBuilder('IDENTITE', '#C82832', null)
+    ...cardTypeBuilder('IDENTITE', '#C82832', '#FFFFFF', null)
   },
   newBuy: {
-    ...cardTypeBuilder('ACHAT NEUF', '#00507C', ACHAT_NEUF_LOGO)
+    ...cardTypeBuilder('ACHAT NEUF', '#00507C', '#FFFFFF', ACHAT_NEUF_LOGO)
+  },
+  finance: {
+    ...cardTypeBuilder('SOLUTION CREDIT', '#3EA8CB', '#202227', FINANCE_LOGO)
   }
 };
 
 export const BADGE_TYPE = {
   vip: {
-    ...badgeTypeBuilder('VIP', '#BF7703')
+    ...badgeTypeBuilder('VIP', '#BF7703', '#BF7703')
   },
   parthenship: {
-    ...badgeTypeBuilder('PARTENAIRE', '#1FB6FF')
+    ...badgeTypeBuilder('PARTENAIRE', '#1FB6FF', '#1FB6FF')
   }
 };
 

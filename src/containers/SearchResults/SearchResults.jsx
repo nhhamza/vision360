@@ -2,23 +2,20 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 import Header from '../../components/Header/Header';
-import CardWithHeader from '../../components/Cards/CardWithHeader/CardWithHeader';
+import ResultItem from '../ResultItem/ResultItem';
+import styles from './style';
 import t from '../../constants/translates';
-import {
-  CARD_TYPE,
-  BADGE_TYPE,
-  NEW_BUY_STATE
-} from '../../constants/global-constants';
-import Timeline from '../../components/Timeline/Timeline';
 import './style.scss';
 
 const SearchResults = () => {
+  const classes = makeStyles(styles)();
   const { text } = useParams();
   return (
     <>
       <Header />
-      <Grid container spacing={2}>
+      <Grid container spacing={2} className={classes.resultsContainer}>
         <Grid item xs={12}>
           <div className="search-title">
             <p className="search-title__count">2</p>
@@ -26,19 +23,11 @@ const SearchResults = () => {
             <p>{text}</p>
           </div>
         </Grid>
+        <ResultItem />
         <Grid item xs={12}>
-          <CardWithHeader
-            cardType={CARD_TYPE.identity}
-            badge={BADGE_TYPE.vip}
-            content={<h1>Content 1</h1>}
-          />
+          <div className="separator"></div>
         </Grid>
-        <Grid item xs={12}>
-          <CardWithHeader
-            cardType={CARD_TYPE.newBuy}
-            content={<Timeline steps={NEW_BUY_STATE} activeStep={3} />}
-          />
-        </Grid>
+        <ResultItem />
       </Grid>
     </>
   );

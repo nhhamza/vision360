@@ -1,13 +1,14 @@
-export const badgeTypeBuilder = (name, color) => {
+export const badgeTypeBuilder = (name, background, color) => {
   return {
     name,
+    background,
     color
   };
 };
 
-export const cardTypeBuilder = (name, color, logo) => {
+export const cardTypeBuilder = (name, background, color, logo) => {
   return {
-    ...badgeTypeBuilder(name, color),
+    ...badgeTypeBuilder(name, background, color),
     logo
   };
 };

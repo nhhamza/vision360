@@ -24,7 +24,10 @@ const CardWithHeader = ({ cardType, badge, content }) => {
       <div className="header-card">
         <span
           className="cartouche"
-          style={{ backgroundColor: cardType?.color }}
+          style={{
+            backgroundColor: cardType?.background,
+            color: cardType?.color
+          }}
         >
           {cardType?.logo && (
             <img className="logo" src={cardType?.logo} alt="logo" />

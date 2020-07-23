@@ -22,6 +22,11 @@ const theme = createMuiTheme({
         fontSize: 18
       }
     },
+    MuiCard: {
+      root: {
+        overflow: 'unset'
+      }
+    },
     MuiStepLabel: {
       label: {
         color: '#8F97AD',
