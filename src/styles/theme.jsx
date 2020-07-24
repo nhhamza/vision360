@@ -27,6 +27,13 @@ const theme = createMuiTheme({
         overflow: 'unset'
       }
     },
+    MuiCardContent: {
+      root: {
+        '&:last-child': {
+          paddingBottom: 0
+        }
+      }
+    },
     MuiStepLabel: {
       label: {
         color: '#8F97AD',
