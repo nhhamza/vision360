@@ -32,7 +32,7 @@ const Timeline = ({ steps, activeStep }) => {
         connector={<CustomConnector />}
       >
         {steps?.map(step => (
-          <Step key={step.key}>
+          <Step key={step.key} value={step.key}>
             <StepLabel StepIconComponent={CustomStepIcon}>
               {step.name}
             </StepLabel>

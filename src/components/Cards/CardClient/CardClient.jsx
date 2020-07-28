@@ -13,11 +13,12 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import CardWithHeader from '../CardWithHeader/CardWithHeader';
+import text from '../../../constants/translates';
 import styles from './style';
 import { CARD_TYPE, BADGE_TYPE } from '../../../constants/global-constants';
 import './style.scss';
 
-const CardClient = ({ onCollapseChanged }) => {
+const CardClient = ({ onCollapseChanged, client }) => {
   const classes = makeStyles(styles)();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('lg'));
@@ -39,41 +40,64 @@ const CardClient = ({ onCollapseChanged }) => {
   const getMd = () => {
     return collapsed ? 12 : 6;
   };
+
+  const getCheckIcon = isChecked => {
+    if (isChecked) {
+      return <CheckIcon className={classes.checkIcon} />;
+    }
+
+    return <ClearIcon className={classes.clearIcon} />;
+  };
+
+  const getBadge = (isVip, isPartenaire) => {
+    if (isVip) {
+      return BADGE_TYPE.vip;
+    }
+
+    if (isPartenaire) {
+      return BADGE_TYPE.parthenship;
+    }
+
+    return null;
+  };
+
   const content = (
     <>
       <Grid container>
         <Grid item xs={12}>
-          <p className="client-card__title">Mr DUPONT Pierre</p>
+          <p className="client-card__title">{`${client.namePrefix} ${client.lastName} ${client.firstName}`}</p>
         </Grid>
         <Grid item xs={12} md={getMd()}>
           <Grid container className={classes.clientContainer}>
             <Grid container className={classes.sectionContainer}>
               <Grid item xs={12}>
                 <p className="client-card__text">
-                  340 Avenue du Général de Gaulle
+                  {`${client.address.streetNumber} ${client.address.streetName}`}
                 </p>
               </Grid>
               <Grid item xs={12}>
-                <p className="client-card__text">59000 LILLE</p>
+                <p className="client-card__text">{`${client.address.postalCode} ${client.address.city}`}</p>
               </Grid>
             </Grid>
             <Grid container className={classes.sectionContainer}>
               <Grid item xs={12}>
                 <div className="icon-label__container">
                   <PhoneIcon className={classes.icon} />
-                  <p className="client-card__text">Mobile: 06 94 73 26 32</p>
+                  <p className="client-card__text">
+                    {`${text.client.mobile}: ${client.cellPhoneNumber}`}{' '}
+                  </p>
                 </div>
               </Grid>
               <Grid item xs={12}>
                 <div className="icon-label__container">
                   <PhoneIcon className={classes.icon} />
-                  <p className="client-card__text">Fixe: 03 20 84 73 27</p>
+                  <p className="client-card__text">{`${text.client.fix}: ${client.fixNumber}`}</p>
                 </div>
               </Grid>
               <Grid item xs={12}>
                 <div className="icon-label__container">
                   <MailIcon className={classes.icon} />
-                  <p className="client-card__text">Email: p.dupont@gmail.com</p>
+                  <p className="client-card__text">{`${text.client.email}: ${client.email}`}</p>
                 </div>
               </Grid>
             </Grid>
@@ -81,30 +105,34 @@ const CardClient = ({ onCollapseChanged }) => {
               <Grid item xs={12}>
                 <Grid container>
                   <Grid item xs={6}>
-                    <p className="client-card__text">Opt-in Tel mobile</p>
+                    <p className="client-card__text">
+                      {text.client.optin.mobile}
+                    </p>
                   </Grid>
                   <Grid item xs={6}>
-                    <CheckIcon className={classes.checkIcon} />
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={12}>
-                <Grid container>
-                  <Grid item xs={6}>
-                    <p className="client-card__text">Opt-in Tel fixe</p>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <ClearIcon className={classes.clearIcon} />
+                    {getCheckIcon(client.optinCellPhone)}
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12}>
                 <Grid container>
                   <Grid item xs={6}>
-                    <p className="client-card__text">Opt-in Email</p>
+                    <p className="client-card__text">{text.client.optin.fix}</p>
                   </Grid>
                   <Grid item xs={6}>
-                    <CheckIcon className={classes.checkIcon} />
+                    {getCheckIcon(client.optinFix)}
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container>
+                  <Grid item xs={6}>
+                    <p className="client-card__text">
+                      {text.client.optin.email}
+                    </p>
+                  </Grid>
+                  <Grid item xs={6}>
+                    {getCheckIcon(client.optinEmail)}
                   </Grid>
                 </Grid>
               </Grid>
@@ -116,7 +144,7 @@ const CardClient = ({ onCollapseChanged }) => {
             <Grid container className={classes.clientContainer}>
               <Grid container className={classes.sectionContainer}>
                 <Grid item xs={12}>
-                  <p className="client-card__text">Né le 10/03/1975</p>
+                  <p className="client-card__text">{`${text.client.born} ${client.bornDate}`}</p>
                 </Grid>
                 <Grid item xs={12}>
                   <p className="client-card__text">à Villeneuve d&apos;Ascq</p>
@@ -125,30 +153,30 @@ const CardClient = ({ onCollapseChanged }) => {
                   <p className="client-card__text">Français</p>
                 </Grid>
                 <Grid item xs={12}>
-                  <p className="client-card__text">Marié / 2 enfants</p>
+                  <p className="client-card__text">{`${client.maritalStatus} / ${client.maritalStatusDetail}`}</p>
                 </Grid>
               </Grid>
             </Grid>
             <Grid container className={classes.clientContainer}>
               <Grid container className={classes.sectionContainer}>
                 <Grid item xs={12}>
-                  <p className="client-card__text">
-                    Cadres et profession intellect sup
-                  </p>
+                  <p className="client-card__text">{text.profesion}</p>
                 </Grid>
                 <Grid item xs={12}>
                   <div className="icon-label__container">
                     <PhoneIcon className={classes.icon} />
-                    <p className="client-card__text">Pro: 03 61 40 42 38</p>
+                    <p className="client-card__text">{`${text.client.pro}: ${client.proNumber}`}</p>
                   </div>
                 </Grid>
                 <Grid item xs={12}>
                   <Grid container>
                     <Grid item xs={6}>
-                      <p className="client-card__text">Opt-in Tel pro</p>
+                      <p className="client-card__text">
+                        {text.client.optin.profesionel}
+                      </p>
                     </Grid>
                     <Grid item xs={6}>
-                      <ClearIcon className={classes.clearIcon} />
+                      {getCheckIcon(client.optinPro)}
                     </Grid>
                   </Grid>
                 </Grid>
@@ -167,7 +195,7 @@ const CardClient = ({ onCollapseChanged }) => {
         >
           <div className="icon-label__container">
             <p className="client-card__text">
-              {collapsed ? 'En voir plus' : 'Réduire'}
+              {collapsed ? text.client.seeMore : text.client.seeLess}
             </p>
             {collapsed ? (
               <ExpandMoreIcon className={classes.expandIcon} />
@@ -187,14 +215,15 @@ const CardClient = ({ onCollapseChanged }) => {
   return (
     <CardWithHeader
       cardType={CARD_TYPE.identity}
-      badge={BADGE_TYPE.vip}
+      badge={getBadge(client.isVip, client.isPartenaire)}
       content={content}
     />
   );
 };
 
 CardClient.propTypes = {
-  onCollapseChanged: PropTypes.func
+  onCollapseChanged: PropTypes.func,
+  client: PropTypes.oneOf(PropTypes.object)
 };
 
 export default CardClient;

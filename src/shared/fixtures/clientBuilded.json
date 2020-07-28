@@ -1,0 +1,24 @@
+{
+  "firstName": "Pierre",
+  "lastName": "DUPONT",
+  "namePrefix": "Mr",
+  "maritalStatus": "Marié",
+  "maritalStatusDetail": "2 enfants",
+  "isVip": true,
+  "isPartenaire": false,
+  "address": {
+    "city": "LILLE",
+    "postalCode": "59000",
+    "streetNumber": "340",
+    "streetName": "Avenue du Général de Gaulle"
+  },
+  "email": "p.dupont@gmail.com",
+  "optinEmail": true,
+  "cellPhoneNumber": "06 94 73 26 32",
+  "optinCellPhone": true,
+  "fixNumber": "03 20 84 73 27",
+  "optinFix": false,
+  "proNumber": "03 61 40 42 38",
+  "optinPro": false,
+  "bornDate": "10/03/1975"
+}

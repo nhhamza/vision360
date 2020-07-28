@@ -1,0 +1,13 @@
+{
+  "contractNumber": "38472940",
+  "bookingDate": "11/06/2019",
+  "contractStatusCode": "CNF",
+  "programCode": 34939,
+  "programName": "Nom du programme",
+  "lotNumber": 351,
+  "deliveryDate": "01/09/2020",
+  "commercial": "Eric Foroni",
+  "email": "eforoni@nexity.fr",
+  "phoneNumber": "06 94 72 32 25",
+  "subsidiary": "Nexity Lille Nord"
+}

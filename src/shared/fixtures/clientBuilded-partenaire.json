@@ -1,0 +1,24 @@
+{
+  "firstName": "Jean-Michel",
+  "lastName": "DUPONT",
+  "namePrefix": "Mr",
+  "maritalStatus": "Inconnue",
+  "maritalStatusDetail": "Autres",
+  "isVip": false,
+  "isPartenaire": true,
+  "address": {
+    "city": "LILLE",
+    "postalCode": "59000",
+    "streetNumber": "344",
+    "streetName": "Avenue de la constitution"
+  },
+  "email": "jm.dupont@gmail.com",
+  "optinEmail": false,
+  "cellPhoneNumber": "06 94 73 26 32",
+  "optinCellPhone": false,
+  "fixNumber": "03 20 84 73 27",
+  "optinFix": false,
+  "proNumber": "03 61 40 42 38",
+  "optinPro": false,
+  "bornDate": "10/03/1975"
+}

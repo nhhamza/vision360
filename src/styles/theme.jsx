@@ -24,7 +24,8 @@ const theme = createMuiTheme({
     },
     MuiCard: {
       root: {
-        overflow: 'unset'
+        overflow: 'unset',
+        minWidth: '260px'
       }
     },
     MuiCardContent: {

@@ -32,15 +32,36 @@ export const NEW_BUY_STATE = [
     ...stepBuilder('Optionné', 'OPT')
   },
   {
-    ...stepBuilder('Réservé', 'RES')
+    ...stepBuilder('Réservé', 'CNF')
   },
   {
     ...stepBuilder('Notifié', 'NOT')
   },
   {
-    ...stepBuilder('Signé notaire', 'SIGN')
+    ...stepBuilder('Signé notaire', 'SIG')
   },
   {
     ...stepBuilder('Livré', 'LIV')
+  }
+];
+
+export const SOLUTION_STATE = [
+  {
+    ...stepBuilder('Nouveau dossier', 'NEW')
+  },
+  {
+    ...stepBuilder('Prospect', 'PRO')
+  },
+  {
+    ...stepBuilder('Dossier en instruction', 'INS')
+  },
+  {
+    ...stepBuilder('DDP envoyée à la banque', 'DPE')
+  },
+  {
+    ...stepBuilder('Offre émise par la banque', 'OFE')
+  },
+  {
+    ...stepBuilder('Signature notaire', 'SNO')
   }
 ];

@@ -3,9 +3,15 @@ import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import CardClient from '../../components/Cards/CardClient/CardClient';
 import ResultItem from './ResultItem';
+import CLIENT_MOCK from '../../shared/fixtures/clientBuilded.json';
 
 describe('ResultItem test component', () => {
-  const wrapper = mount(<ResultItem />);
+  const MOCK_PROPS = {
+    item: {
+      client: CLIENT_MOCK
+    }
+  };
+  const wrapper = mount(<ResultItem {...MOCK_PROPS} />);
 
   it('should render', () => {
     expect(wrapper.exists()).toBeTruthy();

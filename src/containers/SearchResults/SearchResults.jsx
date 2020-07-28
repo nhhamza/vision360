@@ -8,10 +8,20 @@ import ResultItem from '../ResultItem/ResultItem';
 import styles from './style';
 import t from '../../constants/translates';
 import './style.scss';
+import CLIENT_MOCK from '../../shared/fixtures/clientBuilded.json';
+import CLIENT_PART_MOCK from '../../shared/fixtures/clientBuilded-partenaire.json';
 
 const SearchResults = () => {
   const classes = makeStyles(styles)();
   const { text } = useParams();
+  const MOCK_RESULTS = [
+    {
+      client: CLIENT_MOCK
+    },
+    {
+      client: CLIENT_PART_MOCK
+    }
+  ];
   return (
     <>
       <Header />
@@ -23,11 +33,11 @@ const SearchResults = () => {
             <p>{text}</p>
           </div>
         </Grid>
-        <ResultItem />
+        <ResultItem item={MOCK_RESULTS[0]} />
         <Grid item xs={12}>
           <div className="separator"></div>
         </Grid>
-        <ResultItem />
+        <ResultItem item={MOCK_RESULTS[1]} />
       </Grid>
     </>
   );
